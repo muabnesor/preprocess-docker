@@ -46,7 +46,7 @@ ENV PATH ${DEST_DIR}/FastQC:$PATH
 # cutadapt install
 ENV CUTADAPT_VERSION 1.16
 
-RUN pip3 install --user --upgrade cutadapt==${CUTADAPT_VERSION} && \
+RUN pip3 install --upgrade cutadapt==${CUTADAPT_VERSION} && \
     ln -s /root/.local/bin/cutadapt /usr/bin/
 
 # trim-galore install
@@ -58,5 +58,5 @@ RUN ln -s /opt/trim_galore /usr/local/bin/trim_galore
 
 # multiqc install
 ENV MULTIQC_VERSION 1.8
-RUN pip3 install --user --upgrade multiqc==${MULTIQC_VERSION} && \
+RUN pip3 install --upgrade multiqc==${MULTIQC_VERSION} && \
     ln -s /root/.local/bin/multiqc /usr/bin/
